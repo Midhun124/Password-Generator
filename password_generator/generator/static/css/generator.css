@@ -1,0 +1,144 @@
+:root {
+  --main-bg-color: #ffffffd3;
+  --main-txt-color: #fffdfd;
+  --normal-txt-color: #000000;
+  --span-color: rgb(140, 153, 190);
+  --btn1-bg-color: rgb(254, 254, 254);
+  --btn1-txt-color: #FFFFFF;
+  --btn2-bg-color: rgb(0, 174, 255);
+  --input-txt-color: #54554E;
+  --hover-color: #ff0000;
+  --full-width: 100%;
+  --half-width: 50%;
+  --font-family: 'Roboto', sans-serif;
+  --main-font-size: 25px;
+  --p-font-size: 20px;
+  --a-font-size: 15px;
+  --main-font-weight: 900;
+  --main-margin: 2%;
+  --main-padding: 2%;
+  --mobile-margin: 4%;
+  --p-margin-left: 2%;
+  --p-margin-right: 2%;
+  --p-margin-top: 2%;
+  --p-margin-bottom: 4%;
+  --p-padding-left: 2%;
+  --p-padding-right: 2%;
+  --p-padding-top: 2%;
+  --p-padding-bottom: 2%;
+  --btn-padding: 1%;
+  --btn-left-padding: 2%;
+  --btn-right-padding: 2%;
+  --line-height: 22px;
+}
+@media (min-width: 992px) {
+  .password-generator-container-fluid {
+    display: flex;
+  }
+  .password-generator-instruction {
+    width: var(--half-width);
+    margin: var(--main-margin);
+  }
+  .password-generator-section {
+    width: var(--half-width);
+    margin: var(--main-margin);
+  }
+}
+@media (max-width: 992px) {
+  .password-generator-container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
+  .password-generator-instruction {
+    width: var(--full-width);
+    margin: var(--mobile-margin);
+  }
+  .password-generator-section {
+    width: var(--full-width);
+    margin: var(--mobile-margin);
+  }
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-image: var(--bg-url);
+  font-family: var(--font-family);
+  color: var(--main-txt-color);
+}
+.password-generator-container-fluid {
+  width: var(--full-width);
+}
+h2 {
+  font-size: var(--main-font-size);
+  font-weight: var(--main-font-weight);
+}
+.password-overview-points::marker {
+  font-size: 25px;
+  color: rgb(0, 187, 255);
+}
+.user-instruction-points::marker {
+  font-size: 20px;
+  color: rgb(0, 187, 255);
+}
+.password-question {
+  font-size: var(--p-font-size);
+}
+.password-answer {
+  font-size: var(--a-font-size);
+  line-height: var(--line-height);
+}
+.password-working-overview {
+  font-size: var(--p-font-size);
+  margin-bottom: var(--p-margin-bottom);
+}
+.password-overview-points {
+  font-size: var(--a-font-size);
+  line-height: var(--line-height);
+}
+.user-instruction {
+  font-size: var(--p-font-size);
+  margin-bottom: var(--p-margin-bottom);
+}
+.user-instruction-points {
+  font-size: var(--a-font-size);
+  line-height: var(--line-height);
+}
+span {
+  font-weight: var(--main-font-weight);
+  color: var(--span-color);
+}
+.media {
+  text-decoration: none;
+  color: var(--main-txt-color);
+}
+.media:hover {
+  color: var(--hover-color);
+}
+.password-generator-form {
+  margin-bottom: var(--p-margin-bottom);
+}
+.button-generator {
+  border: none;
+  background-color: var(--btn1-bg-color);
+  border-radius: 15px;
+  padding: var(--btn-padding);
+  font-weight: var(--main-font-weight);
+}
+.new-password {
+  border: 1px solid white;
+  background-color: var(--main-bg-color);
+  color: var(--normal-txt-color);
+  font-weight: var(--main-font-weight);
+  font-size: var(--p-font-size);
+  padding: var(--main-padding);
+}
+.copy-password {
+  border: none;
+  background-color: var(--btn2-bg-color);
+  padding: var(--btn-padding);
+  font-weight: var(--main-font-weight);
+  color: var(--btn1-txt-color);
+  border-radius: 5px;
+  margin: var(--main-margin);
+}

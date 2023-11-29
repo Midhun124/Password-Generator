@@ -1,0 +1,61 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/generator.css" %}">
+  <title>Password Generator</title>
+  <style>
+    :root {
+      --bg-url: url("{% static 'images/password-background.jpg' %}");
+    }
+    </style>
+</head>
+<body>
+  <div class="password-generator-container-fluid">
+    <div class="password-generator-instruction">
+      <h2>Password Generator</h2>
+      <p class="password-question">What is Password Generator?</p>
+      <p class="password-answer">A Password Generator is a tool that allows users to create secure and complex passwords based on their specific requirements. This particular Password Generator is a web application built using Django, HTML, and CSS.In this application, users can define the total length of the password they want to generate. They can also specify the number of alphabets, numbers, and special characters they want in their password. This allows users to create a password that fits their needs while ensuring it is strong and secure.</p>
+      <ul class="password-working-overview">
+        <p>Here’s a brief overview of how it works:</p>
+        <li class="password-overview-points"><span>Django</span> (a Python-based web framework) is used for handling the backend logic of the application. This includes form validation and password generation.</li>
+        <li class="password-overview-points"><span>HTML</span> is used to structure the content on the webpage. This includes the form where users can enter their password specifications.</li>
+        <li class="password-overview-points"><span>CSS</span> is used to style the webpage and make it visually appealing.</li>
+      </ul>
+      <ol class="user-instruction">
+        <p>To use the Password Generator, follow these steps:</p>
+        <li class="user-instruction-points"><span>Enter the total length of the password:</span> This is the total number of characters you want in your password.</li>
+        <li class="user-instruction-points"><span>Enter the number of alphabets:</span> This is the total number of alphabets (both lowercase and uppercase) you want in your password.</li>
+        <li class="user-instruction-points"><span>Enter the number of numbers:</span> This is the total number of numeric characters (0-9) you want in your password.</li>
+        <li class="user-instruction-points"><span>Enter the number of special characters:</span> This is the total number of special characters (like !, @, #, $, etc.) you want in your password.</li>
+      </ol>
+      <div class="developer-social-media">
+        <p>Linkedin : <a href="https://www.linkedin.com/in/midhunbalachandran/" target="_blank" class="media">https://www.linkedin.com/in/midhunbalachandran/</a></p>
+        <p>Github : <a href="https://github.com/Midhun124" target="_blank" class="media">https://github.com/Midhun124</a></p>
+        <p>Source Of Code : <a href="#" target="_blank" class="media"></a></p>
+      </div>
+    </div>
+    <div class="password-generator-section">
+      <form class="password-generator-form" method="POST" action="{% url 'password_generator' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="button-generator" type="submit" value="Generate Password">
+      </form>
+      <div class="new-password">
+        <p>Your New Password</p>
+        <input type="text" value="{{ password }}" id="password">
+        <button class="copy-password" onclick="copyToClipboard('password')">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static "js/generator.js" %}"></script>
+</body>
+</html>
