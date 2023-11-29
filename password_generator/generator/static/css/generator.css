@@ -1,8 +1,8 @@
 :root {
   --main-bg-color: #ffffffd3;
-  --main-txt-color: #000000;
+  --main-txt-color: #ffffff;
   --normal-txt-color: #000000;
-  --span-color: rgb(82, 83, 86);
+  --span-color: rgb(185, 185, 185);
   --btn1-bg-color: rgb(255, 0, 0);
   --btn1-txt-color: #FFFFFF;
   --btn2-bg-color: rgb(0, 174, 255);
@@ -117,7 +117,6 @@ span {
 }
 .password-generator-form {
   margin-bottom: var(--p-margin-bottom);
-  border: 1px solid black;
   padding: var(--main-padding);
 }
 .button-generator {
