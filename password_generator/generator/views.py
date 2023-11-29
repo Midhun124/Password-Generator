@@ -19,6 +19,7 @@ def generator(request):
       form.add_error(None, 'Please enter only numeric values.')
       return render(request, 'generator.html', {'form': form, 'password': password})
 
+    # Check the sum of the number of alphabets, numbers, and special characters is less than or equal to the total length of the password.
     if no_alphabets + no_numbers + no_symbols > length:
       form.add_error(None, 'The total length is less than the sum of alphabets, numbers, and symbols. Please try again.')
     else:
@@ -26,6 +27,7 @@ def generator(request):
       no_lowercase = no_alphabets // 2
       no_uppercase = no_alphabets - no_lowercase
 
+      # fill the random selection of Characters
       password_list += [random.choice('abcdefghijklmnopqrstuvwxyz') for _ in range(no_lowercase)]
       password_list += [random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(no_uppercase)]
       password_list += [random.choice('!@#$%^&*()?') for _ in range(no_symbols)]
