@@ -2,6 +2,20 @@ from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from .forms import PasswordGeneratorForm
 import random
+from django.views.decorators.csrf import csrf_exempt
+from git import Repo
+
+@csrf_exempt
+def webhook(request):
+  if request.method == 'POST':
+    repo = Repo('.//home/Password0Generator/password_generator')
+    git = repo.git
+    git.checkout('master')
+    git.pull()
+    return HttpResponse('Success', status=200)
+  else:
+    return HttpResponse('Invalid request', status=400)
+
 
 
 
