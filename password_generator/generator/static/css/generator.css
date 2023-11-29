@@ -1,9 +1,9 @@
 :root {
   --main-bg-color: #ffffffd3;
-  --main-txt-color: #fffdfd;
+  --main-txt-color: #000000;
   --normal-txt-color: #000000;
-  --span-color: rgb(140, 153, 190);
-  --btn1-bg-color: rgb(254, 254, 254);
+  --span-color: rgb(82, 83, 86);
+  --btn1-bg-color: rgb(255, 0, 0);
   --btn1-txt-color: #FFFFFF;
   --btn2-bg-color: rgb(0, 174, 255);
   --input-txt-color: #54554E;
@@ -117,6 +117,8 @@ span {
 }
 .password-generator-form {
   margin-bottom: var(--p-margin-bottom);
+  border: 1px solid black;
+  padding: var(--main-padding);
 }
 .button-generator {
   border: none;
@@ -124,9 +126,10 @@ span {
   border-radius: 15px;
   padding: var(--btn-padding);
   font-weight: var(--main-font-weight);
+  color: var(--btn1-txt-color);
 }
 .new-password {
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
   background-color: var(--main-bg-color);
   color: var(--normal-txt-color);
   font-weight: var(--main-font-weight);
